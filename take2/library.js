@@ -1,3 +1,8 @@
+/*
+JAVIER F.
+3/15/19
+*/
+
 //Story
 const choices = abc123;
 const back = ["Welcome."];
@@ -31,8 +36,4 @@ class Story {
     this.chose[this.chose.length] = a;
     this.i+=1;
   }
-}
-//Cleaner look to build choice string
-let buildOptions = (a,b)=>{
-  return "A)"+a+"<br>"+"B)"+b;
 }

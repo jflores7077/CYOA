@@ -1,31 +1,31 @@
 const abc123 = {
-  msg: "1This is the city skyline Chose your options",
+  msg: "You're at the city",
   options:{
     a:{
-      msg:"2You chose A. Chose again",
-      info:"Chose option A 1",
+      msg:"You found a coin",
+      info:"go outside",
       options:{
         a:{
-          msg:"3Again. The end.",
-          info:"Chose option A 2",
+          msg:"the coin grew legs :o",
+          info:"throw the coin",
         },
         b:{
-          msg:"3The end.",
-          info:"Chose option B 2",
+          msg:"yum",
+          info:"eat the coin",
         }
       }
     },
     b:{
-      msg:"2you chose B. Chose again",
-      info:"Chose option B 1",
+      msg:"you stayed inside",
+      info:"stay inside",
       options:{
         a:{
-          msg:"3aaThe end.",
-          info:"Chose option A 2",
+          msg:"you died in your sleep :(",
+          info:"go zzz",
         },
         b:{
-          msg:"3Again!, The end.",
-          info:"Chose option B 3",
+          msg:"the earbuds exploded in your ears. You died.",
+          info:"listen to music",
         }
       }
     }

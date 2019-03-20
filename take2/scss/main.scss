@@ -49,7 +49,7 @@ $head-height: 100vh;
     top:100vh;
     width:100%;
     height:100%;
-    transition: 3.25s;
+    transition: 3.75s;
     transition-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1.000);
     z-index:1;
   }
@@ -97,12 +97,12 @@ $head-height: 100vh;
         border-radius:70px;
         padding: 10px 30px;
         display: inline;
-        transition: 0.25s;
+        transition: 0.5s;
       }
       li:hover{
         border:3px solid rgba(218, 200, 200, 0.884);
-        transform:scale(1.1);
-        transition: 0.1s;
+        transform:scale(1.2);
+        transition: 0.2s;
 
       }
     }
