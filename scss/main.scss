@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand|ZCOOL+QingKe+HuangYou');
 *{padding:0;margin:0;color:rgb(15, 14, 14);overflow: hidden;}
 $head-height: 100vh;
+
 @keyframes intro{
   0%{ opacity:0; }
   100%{ opacity:1; }
@@ -24,7 +25,39 @@ $head-height: 100vh;
 
 .user{ background-color: rgb(69, 101, 170); *{color: black}}
 .story{ background-color: rgb(100, 174, 235); *{color: black}}
+#shade{
+  background: black;
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  top:0;
+  opacity: 1;
+  pointer-events: none;
+}
+.calm{
+  transition: 15s;
+}
+.clickBefore{
+  transition: 0.25s;
+}
+.clickAfter{
+  transition: 0.75s;
+}
+#typewriter{
+  display: flex;
+  width:100%;
+  height:100%;
+  justify-content: space-around;
+  align-items: center;
 
+}
+#typewriter h3 {
+  letter-spacing: .005em; /* Adjust as needed */
+  font-weight: 100;
+  font-size: 2em;
+  text-align: center;
+  width:80%;
+}
 #head{
   transition: 0.5s;
   width: 100vw;
@@ -33,7 +66,7 @@ $head-height: 100vh;
   animation-delay: 13s;*/
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-duration: 3s;
+  animation-duration: 2.5s;
   animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
   transition: 0.5s;
   *{
@@ -49,7 +82,21 @@ $head-height: 100vh;
     top:100vh;
     width:100%;
     height:100%;
-    transition: 3.75s;
+    transition: 2.5s;
+    transition-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    z-index:1;
+  }
+  
+  #head_sky{
+    position:absolute;
+    background-image: url("../img/clouds1.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 30%;
+    background-position: 0% center;
+    top:-100vh;
+    width:100%;
+    height:100%;
+    transition: 2.5s;
     transition-timing-function:cubic-bezier(0.215, 0.610, 0.355, 1.000);
     z-index:1;
   }
@@ -58,7 +105,7 @@ $head-height: 100vh;
     width:100vw;
     height:100%;
     top:0vh;
-    transition: 3.25s;
+    transition: 2.5s;
     display: flex;
     justify-content: center;
     align-items: center;

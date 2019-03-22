@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CYOA: The archeologist</title>
+    <title>take2</title>
     <link rel="stylesheet" href="css/main.css">
 
   </head>
   <body>
-    <div id="head">
-      <h1 id="title">
-        The <a href="take2/index.html">archeologist</a>
-      </h1>
+    <div id="head" class="story">
+      <div id="head_cont">
+        <div id="typewriter">
+          <h3 id="twh3" class="type">
+          </h3>
+        </div>
+      </div>
+      <div id="head_background">
+
+      </div>
+      <div id="head_sky">
+
+      </div>
     </div>
     <div id="body">
-      <div id="visual">
-        <div id="pics">
-
-        </div>
+      <div id="choices_cont">
+        <ul id="choices">
+          <li class="option" id="choice_a">A</li>
+          <li class="option" id="choice_b">B</li>
+        </ul>
       </div>
-      <div id='ui'>
-        <div id="console">
-          <p style="display:inline;">></p>
-          <form autocomplete="off" >
-            <input type="text" id="user" onblur="this.focus()" autocomplete="off"  autofocus >
-          </form>
-          <div id="options">
+    </div>
+    <div id="shade">
 
-          </div>
-        </div>
-        <div id="output">
-          <h1>
-              
-          </h1>
-        </div>
-      </div>
-      </div>
-
-    
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
     <script src="choices.js"></script>

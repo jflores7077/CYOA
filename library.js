@@ -1,5 +1,10 @@
+/*
+JAVIER F.
+3/15/19
+*/
 //Story
 const choices = abc123;
+const back = ["Welcome. You are playing John Johnstone. Johnstone is a very intelligent person. Your mother, however, is dead. You live in new york, Johnstone seeked a job in Archeology. Johnstone found it.This is the story of how Johnstone found out about his past."];
 //Story class
 class Story {
   constructor(chose) {
@@ -10,7 +15,10 @@ class Story {
     //First choice is at 0
     this.i = -1;
   }
-
+  ended(){
+    console.log((this.x.options?false:true)+"LMAO")
+    return this.x.options?false:true;
+  }
   //Return part of story you're on
   getStory(){
     if(this.chose.length > 0){
@@ -18,8 +26,6 @@ class Story {
     }else{
       this.x = this.x;
     }
-    this.i+=1;
-    console.log(this.x)
     return this.x.msg;
   }
 
@@ -30,9 +36,6 @@ class Story {
   //Add user choice
   addChose(a){
     this.chose[this.chose.length] = a;
+    this.i+=1;
   }
-}
-//Cleaner look to build choice string
-let buildOptions = (a,b)=>{
-  return "A)"+a+"<br>"+"B)"+b;
 }
