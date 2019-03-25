@@ -7,97 +7,69 @@ let onDocReady = ()=>{
   const typewriteDiv = $("#typewriter h3")
   let intro = true;
   let done = false;
-
-  let JamiePullThatUp = ()=>{
-    if(!intro){
-      $("#head_background").css("top","0vh")
-      $("#head_sky").css("top","0vh")
-      //typeNext = story1.getStory()
-      headCont.css("top","-27.5vh")
-      headDiv.toggleClass("user story")
-      headDiv.css("animation-name","head-min");
-      $("#head_background").css("top","-55vh")
-      $("#head_sky").css("top","-55vh")
-      $(buttons[0]).html(story1.getChoiceInfo("a"))
-      $(buttons[1]).html(story1.getChoiceInfo("b"))
-      type();
-    }else{
-      window.setTimeout(function(){
-        //type();
-        console.log('AAAA')
-      },1000)
-      intro = false;
-    }
-  }
-  let JamiePutThatAway = ()=>{
-    headCont.css("top","0vh")
-    headDiv.toggleClass("user story")
-    headDiv.css("animation-name","head-max");
-    $("#head_background").css("top","0vh")
-    $("#head_sky").css("top","-100vh")
-  
-  }
   let chose = [];
   let skipped = false;
   let story1 = new Story(chose);
   let dblClicked = false;
   let typeNext = story1.getStory();
   let canClick = true;
-  
-  //typewriteDiv.html(back[0])
-  //typewriteDiv.on("webkitAnimationEnd", JamiePullThatUp);
-  
   var twI = 0;
-  var speed = 50; /* The speed/duration of the effect in milliseconds */
+  var speed = 15; /* The speed/duration of the effect in milliseconds */
   let canType = true;
-  let waitTime= 1000;
+  let waitTime= 500;
+  $("#bottom").mouseover(function(){
+    swipeBottom(story1.ended())
+  });
   function type() {
-    canClick = true;
+    //If in intro, use back[0]
     if(intro){
       twTxt = back[0];
     }else{
       twTxt = typeNext;
     }
+    //typewriter
     let twTxtL = twTxt.length;
-    console.log(twTxt)
     if (twI < twTxtL ) {
       $("#typewriter h3").append(twTxt.charAt(twI));
       twI++;
       setTimeout(type, speed);
-    }else if(canType){
-      console.log(2)
-      if(skipped){
-        waitTime = 1000+(twTxtL*55);
-      }else{
-        waitTime = 1000;
-      }
+    }else{
+      canClick = true;
+      twI = 0;
+      waitTime = (twTxtL*1.5);
+      console.log("calcualted wait"+waitTime)
       setTimeout(function(){
-        twI = 0;
-        intro = false;
-        $("#typewriter h3").html("")
-        if(!intro && !story1.ended()&&twI < twTxtL){
-          JamiePullThatUp()
-          type()
-        }else{
-          $("#typewriter h3").append(twTxt.charAt(twI));
-          twI++;
+        if(intro){
+          console.log("done")
           setTimeout(type, speed);
+          $("#typewriter h3").html("");
+          $("#head_sky").css("top","-50vh")
+          $("#head_background").css("top","0vh")
+          intro = false;
+
+        }else{
+          $(buttons[0]).html(story1.getChoiceInfo("a"))
+          $(buttons[1]).html(story1.getChoiceInfo("b"))
 
         }
-      },waitTime)
-      canType = false;
+      }, waitTime);
     }
   }
   
   type();
-  function optionClicked(){
+  function optionClicked(e){
+    swipeTop();
+    let clickedOn = e.currentTarget;
+    console.log("----e")
+    console.log(e.currentTarget)
     if((!story1.ended()) && canClick){
-      let UserClicked = $(this).attr("id");
-      console.log(UserClicked)
+      let UserClicked = $(clickedOn).attr("id");
       if(UserClicked === "choice_a"){
         story1.addChose("a");
+        console.log("clicked a")
       }else{
         story1.addChose("b");
+        console.log("clicked b")
       }
       
       dblClicked = false;
@@ -106,7 +78,6 @@ let onDocReady = ()=>{
     }
     canType = true;
     type();
-    JamiePutThatAway();
   }
   let skip = ()=>{
     skipped = true;
@@ -135,9 +106,11 @@ let onDocReady = ()=>{
     $("#shade").addClass("clickAfter");
     $("#shade").css("opacity","0");
   })
-  buttons.click(function(){
+  buttons.click(function(e){
     skip = false;
-    optionClicked()
+    twI = 0;
+    $("#typewriter h3").html("");
+    optionClicked(e)
   })
 }
 $(document).ready(onDocReady);

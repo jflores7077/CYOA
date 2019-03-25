@@ -5,6 +5,7 @@ JAVIER F.
 //Story
 const choices = abc123;
 const back = ["Welcome. You are playing John Johnstone. Johnstone is a very intelligent person. Your mother, however, is dead. You live in new york, Johnstone seeked a job in Archeology. Johnstone found it.This is the story of how Johnstone found out about his past."];
+let textReady = false;
 //Story class
 class Story {
   constructor(chose) {
@@ -21,6 +22,7 @@ class Story {
   }
   //Return part of story you're on
   getStory(){
+    textReady = false;
     if(this.chose.length > 0){
       this.x = this.x.options[this.chose[this.i]];
     }else{
@@ -31,6 +33,7 @@ class Story {
 
   //Return available choice.
   getChoiceInfo(choiceInfo){
+    textReady = true;
     return this.x.options[choiceInfo].info;
   }
   //Add user choice
@@ -39,3 +42,24 @@ class Story {
     this.i+=1;
   }
 }
+let typeScreen = true;
+function swipeTop(){
+  if(!typeScreen){
+    $("#head").animate({
+      "top":"0vh"
+    },500)
+
+    typeScreen = true;
+
+  }
+};
+
+function swipeBottom(storyEnded){
+  if(typeScreen && textReady && !storyEnded){
+    $("#head").animate({
+      "top":"-100vh"
+    },500)
+    typeScreen = false;
+
+  }
+};
