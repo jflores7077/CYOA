@@ -99,6 +99,10 @@ const abc123 = {
                   msg:"John decide not to open the door afraid of the red light he saw. However he didn't stop exploring the place instead he went even deep into the cave. While walking he saw symbols and drawing at the walls, so he follows the drawing until he accidently stepped on a button that makes a lot sword to bomb out from every side and killed John. You died.",
                   info:"Do not open the secret door"
                 }
+              },
+              b:{
+                msg:"",
+                info:"Tell his father about the musical box"
               }
             }
 
