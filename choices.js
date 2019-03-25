@@ -101,12 +101,12 @@ const abc123 = {
                 }
               },
               b:{
-                msg:"",
+                msg:"John left the bag and run quickly to tell his father about what he found at the attic. John gives the music box to his father. After his father saw “ Sugarloaf mountain” written at the Trident's handle, he told John that they have to speed up and go to the mountain before someone else take their chance. Immediately, John and his father set to Florida and when they get their they headed toward Sugarloaf mountain. John and his father climbed the mountain and when they get to the top of the mountain they saw a huge door with ancient Greek writing on it.  John’s father told John to open the door while he go around to see if their something else. John was able to solve what the words were asking by using his knowledge in ancient languages. John figure out the password for the door to open which was “ Poseidon ”. John’s father return back and they both enter the cave. As they enter the cave John was amazed by the view of the colorful Reed Flute while his father was looking around for clues. As they explore the place more they found a door with a  red light coming from beneath. They opened the door and saw the trident located in the center of a open Volcano. They used the bridge they found to get into the trident without falling down into the stomach of the volcano. While they're walking slowly, John’s father pushed John off the bridge. You lost.",
                 info:"Tell his father about the musical box"
               }
             }
 
-            }
+          }
         },
         b:{
           msg:"023 was an old acquiescent of John and Miami was the only place 023 could be located at. John traveled to Miami. He had so many questions and yet so little time. John asks the locals around for a person who looked like 023. A man reported that someone that fitted 023's description was last seen inside a bar a few miles away. John rents a car and drives the bar. He finds 023 and as 023 sees John, he starts running. John gave chase to 023 through town and finally corners him in an alleyway. He starts interrogating 023 and discovers the the Trident has the power to destroy the world and that there is another who is searching for the Trident as well. John had little time is and had enough time for one more question.           ",
