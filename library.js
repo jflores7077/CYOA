@@ -4,7 +4,7 @@ JAVIER F.
 */
 //Story
 const choices = abc123;
-const back = ["Welcome. You are playing John Johnstone. Johnstone is a very intelligent person. Your mother, however, is dead. You live in new york, Johnstone seeked a job in Archeology. Johnstone found it.This is the story of how Johnstone found out about his past."];
+const back = ["John Johnstone is a master’s degree graduate in archeology from the University of New York. He was born on January 15th, of the year 1989. His parents were a normal New York family until he was brought to life. His mother had a harsh delivery and she bled to her death. The baby that she delivered was not any normal newborn, his eyes were wide open and had heterochromia eyes, his right, a hazel brown and his left, an emerald green . As he proceeded in his life he began to understand that he had a special ability or power of his own. Young like any other normal kid he began to go to school, however he was able to understand all the languages that were presented to him in school, he could interpret them and use it for his own advantage. Many teachers were astonished by the fact that he was able to understand Latin, Spanish, French, and even ancient languages that were that to be lost. As he continued to grow he aspired seek a job as an archaeologist, as his parents before him and put his multilingual skills to finding artifacts that were lost in time."];
 let textReady = false;
 //Story class
 class Story {
