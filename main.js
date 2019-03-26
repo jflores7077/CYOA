@@ -1,21 +1,12 @@
 let onDocReady = ()=>{
-  $("#shade").addClass("calm");
-  $("#shade").css("opacity","0")
   const buttons = $(".option");
-  const headDiv = $("#head");
-  const headCont = $("#head_cont");
-  const typewriteDiv = $("#typewriter h3")
   let intro = true;
-  let done = false;
   let chose = [];
-  let skipped = false;
   let story1 = new Story(chose);
-  let dblClicked = false;
   let typeNext = story1.getStory();
   let canClick = true;
   var twI = 0;
   var speed = 15; /* The speed/duration of the effect in milliseconds */
-  let canType = true;
   let waitTime= 500;
   $("#bottom").mouseover(function(){
     swipeBottom(story1.ended())
@@ -36,7 +27,9 @@ let onDocReady = ()=>{
     }else{
       canClick = true;
       twI = 0;
-      waitTime = (twTxtL*1.5);
+      waitTime = (twTxtL);
+      if(intro)
+        waitTime = (twTxtL*18)
       console.log("calcualted wait"+waitTime)
       setTimeout(function(){
         if(intro){
@@ -56,12 +49,9 @@ let onDocReady = ()=>{
     }
   }
   
-  type();
   function optionClicked(e){
     swipeTop();
     let clickedOn = e.currentTarget;
-    console.log("----e")
-    console.log(e.currentTarget)
     if((!story1.ended()) && canClick){
       let UserClicked = $(clickedOn).attr("id");
       if(UserClicked === "choice_a"){
@@ -90,6 +80,23 @@ let onDocReady = ()=>{
       $("#typewriter h3").html(typeNext)
     }
   }
+  let teamIntro = false;
+  $("#credits_text").css("opacity","1");
+  setTimeout(function(){
+    $("#credits_text span").css("opacity","1")
+    $("#typewriter").css("width","90%");
+  },1500)
+  setTimeout(function(){
+    $("#shade").addClass("calm");
+    $("#shade").css("opacity","0")
+    $("#typewriter").css("height","80%");
+    $("#typewriter").css("border-radius","20px");
+    type();
+    $("#credits_text").css("opacity","0");
+    setTimeout(function(){
+    },4000)
+
+  },5000)
   $("#head").click(skip);
   buttons.mousedown(function(){
     $("#shade").removeClass();
@@ -109,8 +116,21 @@ let onDocReady = ()=>{
   buttons.click(function(e){
     skip = false;
     twI = 0;
+    $("#typewriter").scrollTop(0);
     $("#typewriter h3").html("");
     optionClicked(e)
+    if(story1.ended()){
+      setTimeout(function(){
+        $("#head_sky").css("transition-duration","65s");
+        $("#head_background").css("transition-duration","35s");
+        $("#head").css("transition-duration","25s");
+        $("#head_sky").css("top","-100vh");
+        $("#head_background").css("top","200vh");
+        $("#head").css("background","rgb(100, 10, 10)");
+        
+
+      },1000)
+    }
   })
 }
 $(document).ready(onDocReady);
