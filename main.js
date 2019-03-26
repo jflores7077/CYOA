@@ -126,7 +126,7 @@ let onDocReady = ()=>{
         $("#head").css("transition-duration","25s");
         $("#head_sky").css("top","-100vh");
         $("#head_background").css("top","200vh");
-        $("#head").css("background","rgb(100, 10, 10)");
+        //$("#head").css("background","rgb(100, 10, 10)");
         
 
       },1000)
